@@ -1,0 +1,28 @@
+// Reference Vairable
+
+int a=10;
+int & b=a
+
+// Now b is the alterantive name for a i.e both a and b are pointing to the same location
+// Refernce variable can not be NULL this is how it is differenent from pointer
+// Moreover we can make array of pointer but not here
+
+
+
+
+
+// Function overloading 
+// It means function can be of the same name in the program but the number of arguments in the function or the type of argument must be diiferent 
+// i.e we cant make exact same function
+
+
+
+
+// Inline function in C++
+// Function inside the class in already inline
+// inline int max(int a,int b)
+// reduce the calling overhead in the function  so if the function is small then use the inline function else length of binary excetable file increases
+// inline is a request not a command hence may or maynot be accepted 
+
+
+//36

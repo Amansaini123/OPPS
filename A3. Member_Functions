@@ -119,7 +119,13 @@ int main(){
 
 
 
+// STATIC FUNCTION 
+// static function can only acces the static data and we use class class name to call this function as static varibale is common for all object
 
+class test{
+    static void disp()
+};
+test:: disp()
 
 
 

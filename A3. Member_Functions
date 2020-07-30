@@ -1,0 +1,128 @@
+// Member functions
+
+// Function can be define outside the class as 
+#include<bits/stdc++.h>
+using namespace std;
+
+class sum{
+    int a,b,t;
+    
+    public:
+        void getdata();
+        void putdata();
+};
+
+// Declaring the function inside the class 
+// Defining the function outside the class
+void sum:: getdata(){
+    cin>>a>>b;
+}
+
+void sum:: putdata(){
+    t=a+b;
+    cout<<t<<", ";
+}
+
+int main()
+{
+    sum obj;
+    obj.getdata();
+    obj.putdata();
+}
+
+
+// By using namespace we can create two variable or two member function having the same name
+#include<bits/stdc++.h>
+using namespace std;
+
+namespace first{
+    int val=500;
+}
+
+int val=100;
+
+int main(){
+    cout<<first::val<<", ";
+}
+
+// It puts the names of its member in a distinct space so that they dont conflict with the names in other namespace i.e prevent collision
+
+
+// Function inside the class is by defalut inline 
+// Compiler may not create inline for recurrsion,static,goto,loop 
+
+
+
+// MESSAGE PASSING -->   Object may communicate with each other through functions
+// ABSTRACTION --->     Act of representing only the essential features without including the backgroud details
+// ENCAPSULATION-->     Wrapping up of the data and functions into a class i.e Data is protected in the capsule and can only be accessed via functions
+// RESULABILITY --->    It is a feature of inheritance that avoid the duplication of the data 
+// DYNAMIC BINDING ---> Linking of procedure call to the code to be executed i.e at run time
+
+
+
+// BENEFITES OF OPPS
+Through inhertiance we can eliminate the reducdaant code
+System can be easlity upgraded
+Secure progrms as data hiding 
+
+
+
+// OBJECTS
+Basic Run time entity 
+Takes space in memory and have associated address i.e we can say varibale of type class
+
+
+// Stacti variable
+// STATIC DATA MEMBER 
+// i.e data member having 1 copy for all the objects
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class test{
+    int no;
+    static int cnt;
+    
+    public:
+        void getval(int x){
+            no=x;
+            cout<<no<<", ";
+            cnt++;
+        }
+        void dispcnt();
+};
+
+void test:: dispcnt(){
+    cout<<cnt<<", "<<endl;
+}
+
+// It is important to declare the static varible outside 
+int test:: cnt;
+
+int main(){
+    test a,b,c;
+    a.dispcnt();
+    b.dispcnt();
+    c.dispcnt();
+    
+    a.getval(100);
+    b.getval(200);
+    c.getval(300);
+    
+    a.dispcnt();
+    b.dispcnt();
+    c.dispcnt();
+}
+
+
+
+
+
+
+
+
+
+
+

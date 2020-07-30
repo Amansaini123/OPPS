@@ -61,9 +61,9 @@ int main(){
 
 
 
-//Protected access modifier is similar to that of private access modifiers, the difference is that the class member 
-//declared as Protected are inaccessible outside the class but they can be accessed by any subclass(derived class) of that class.
-
+// Protected access modifier is similar to that of private access modifiers
+// i.e accesability is same as that of private (i.e class functions or friend functions and  can also be used by derived class)
+// this derived class thing is the only difference i.e protected is used in inheritance
 
 
 #include<bits/stdc++.h>
@@ -86,7 +86,6 @@ class child: public parent{
 };
 
 
-
 int main()
 {
     child obj;
@@ -99,5 +98,5 @@ int main()
 
 
 
-
+// Hence we can conclude that private is most restricted , public is most free and protected gives us the middle level between two
 

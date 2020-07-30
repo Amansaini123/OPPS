@@ -1,7 +1,9 @@
 // Reference Vairable
 
+
 int a=10;
 int & b=a
+
 
 // Now b is the alterantive name for a i.e both a and b are pointing to the same location
 // Refernce variable can not be NULL this is how it is differenent from pointer
@@ -18,6 +20,7 @@ int & b=a
 
 
 
+
 // Inline function in C++
 // Function inside the class in already inline
 // inline int max(int a,int b)
@@ -26,12 +29,12 @@ int & b=a
 
 
 
-
 // Abstraction --> refers to the coffee making machine i.e we have functions but internal implementation is hided
 // The man only knows that pressing the accelerators will increase the speed of car or applying brakes will
 // stop the car but he does not know about how on pressing accelerator the speed is actually increasing, 
+// We can implement Abstraction in C++ using classes. Class helps us to group data and member functions using available access specifiers.
 
-// We can implement Abstraction in C++ using classes. Class helps us to group data members and member functions using available access specifiers.
+
 
 //Access specifiers define how the members (attributes and methods) of a class can be accessed.
 public - members are accessible from outside the class
@@ -41,14 +44,16 @@ protected - members cannot be accessed from outside the class, however, they can
 
 
 
-In normal terms Encapsulation is defined as wrapping up of data and information under a single unit. In Object Oriented Programming,
-Encapsulation is defined as binding together the data and the functions that manipulates them.
+In Object Oriented Programming, Encapsulation is defined as binding together the data and the functions that manipulates them.
 Consider a real life example of encapsulation, in a company there are different sections like the accounts section, finance section, sales section etc.
 
 
 
 
 Polymorphism means "many forms", and it occurs when we have many classes that are related to each other by inheritance.
+
+
+
 // Base class
 class Animal {
   public:
@@ -56,6 +61,7 @@ class Animal {
     cout << "The animal makes a sound \n" ;
   }
 };
+
 
 // Derived class
 class Pig : public Animal {
@@ -72,7 +78,3 @@ class Dog : public Animal {
     cout << "The dog says: bow wow \n" ;
   }
 };
-
-//36
-
-

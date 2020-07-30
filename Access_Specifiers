@@ -1,0 +1,103 @@
+// Also known as access modifiers
+// Access Modifiers or Access Specifiers in a class are used to set the accessibility of the class members. 
+//If we do not specify any access modifiers for the members inside the class then by default the access modifier for the members will be Private.
+
+// All the class members declared under public will be available to everyone. The data members and member functions declared public can be accessed by 
+// other classes too. The public members of a class can be accessed from anywhere in the program using the
+// direct member access operator (.) with the object of that class.
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class circle{
+    public:
+        double radius;
+        
+        double area(){
+            return 3.14*radius*radius;
+        }
+};
+
+
+int main()
+{
+    circle obj;
+    obj.radius=5;
+    cout<<obj.area();
+}
+
+
+
+// The class members declared as private can be accessed only by the functions inside the class.
+// They are not allowed to be accessed directly by any object or function outside the class. 
+// Only the member functions or the friend functions are allowed to access the private data members of a class.
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+class circle{
+    private:
+        double rad;
+    public:
+        void compute(int r){
+            rad=r;
+            cout<<"area is "<<3.14*rad*rad<<endl;
+        }
+};
+
+int main(){
+    
+    circle obj;
+    obj.compute(4);
+}
+
+
+
+
+//Protected access modifier is similar to that of private access modifiers, the difference is that the class member 
+//declared as Protected are inaccessible outside the class but they can be accessed by any subclass(derived class) of that class.
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class parent{
+    protected:
+        int x;
+};
+
+class child: public parent{
+    public:
+        void set(int y){
+            // i.e we are able to access the parent class members inside the base class
+            x=y;
+        }
+        void display(){
+            cout<<"The protected id is "<<x<<endl;
+        }
+};
+
+
+
+int main()
+{
+    child obj;
+    obj.set(5);
+    obj.display();
+}
+
+
+
+
+
+
+
+

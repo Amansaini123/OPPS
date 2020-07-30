@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+class test{
+    int a,b;
+    public:
+        void getval(int x,int y){
+            a=x;
+            b=y;
+        }
+        friend test sum(test,test);
+        void dispval(test);
+};
+
+test sum(test t1,test t2){
+    test t3;
+    t3.a=t1.a+t2.a;
+    t3.b=t1.b+t2.b;
+    return t3;
+}
+
+void test:: dispval(test t3){
+    cout<<t3.a<<", "<<t3.b<<endl;
+}
+
+
+int main()
+{
+    test A,B,C;
+    A.getval(10,20);
+    B.getval(30,40);
+    
+    C=sum(A,B);
+    
+    A.dispval(A);
+    B.dispval(B);
+    C.dispval(C);
+}

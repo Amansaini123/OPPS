@@ -56,5 +56,8 @@ class A{
 
 int A::*ip =&A :: m;
 
+// Constant member function are not allowed to modify the objects on which they are called 
+void add(int ,int )const
+
 
 

@@ -37,3 +37,24 @@ int main()
     B.dispval(B);
     C.dispval(C);
 }
+
+
+
+
+
+
+
+
+// It is possible to take address of a member of a class and assign it to a pointer
+
+class A{
+  private:
+    int m;
+   public:
+   void show()
+};
+
+int A::*ip =&A :: m;
+
+
+

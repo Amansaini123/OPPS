@@ -10,6 +10,153 @@ int main()
 
 
 
+// No values are returned by construtor
+// When we call a object, constructor is automatically called and values are begin assigned to object
+// Same name as of the class
+// Special type of functions i.e special type of member function for assigning the values to private data
+// Created in public part
+// No values are returned by constructor not even void i.e void car() is wrong
+// Constructor can not be inherited
+// Constructor are not virtual
+// We cant refer constructor by its address
+
+
+
+// Parameterized Constructor
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class test{
+  int a,b;
+  public:
+    // created in public part and used to initialize the private data
+    test(int x,int y){
+        a=x;
+        b=y;
+    }
+    void disp(){
+     cout<<a<<", "<<b<<endl;   
+    }
+};
+
+int main(){
+    test t(100,200);      // Implict declaration
+    test t=test(100,200)  // Explicit declaration
+    t.disp();
+}
+
+
+
+
+
+// Copy Constructor
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+class test{
+  int code;
+  float price;
+  
+  public:
+    test(int c,float p); // Declaration of parametrized constructor 
+    test(const test& t); // Copy Constructor 
+    void disp();
+};
+
+test:: test(int c,float p){
+    code=c;
+    price=p;
+}
+test:: test(const test &t){
+    code=t.code;
+    price=t.price;
+}
+void test:: disp(){
+    cout<<code<<" ,"<<price<<endl;
+}
+
+int main()
+{
+    test t1(101,50.6);
+    test t2(t1);// Implicit Declaration
+    test t3=t1;// Explicit  way
+    
+    t1.disp();
+    t2.disp();
+    t3.disp();
+}
+
+
+
+// Constructor overloading 
+// Different Constructor with the same name but with the condition that arguments should be different 
+// i.e same as the concept of function overloading
+
+
+// C++ program to illustrate 
+// Constructor overloading 
+#include <bits/stdc++.h> 
+using namespace std; 
+
+class construct { 
+public: 
+	float area; 
+	
+	// Constructor with no parameters 
+	construct() { 
+		area = 0; 
+	} 
+	
+	// Constructor with two parameters 
+	construct(int a, int b) { 
+		area = a * b; 
+	} 
+	
+	void disp() 
+	{ 
+		cout<< area<< endl; 
+	} 
+}; 
+
+int main() 
+{ 
+	// Constructor Overloading 
+	// with two different constructors 
+	// of class name 
+	construct o; 
+	construct o2( 10, 20); 
+	
+	o.disp(); //0 
+	o2.disp(); // 200
+	return 1; 
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

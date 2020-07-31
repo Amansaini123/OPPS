@@ -59,5 +59,7 @@ int A::*ip =&A :: m;
 // Constant member function are not allowed to modify the objects on which they are called 
 void add(int ,int )const
 
+// Constant objects are read only too i.e nay attmept to modify the constant object is a syntax error
 
+const time noon(12,13,19) is a syntax error
 

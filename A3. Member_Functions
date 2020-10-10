@@ -129,6 +129,171 @@ test:: disp()
 
 
 
+// What is opps
+objects instead of only functions and methods. 
 
+
+
+//Advantages of Opps
+efficient mechanism for code reuse using inheritance which reduces redundancy 
+It provides a mechanism for hiding data
+It offers flexibility through polymorphism 
+
+
+
+// What is structural Programming
+Structural programming refers to the traditional method of programming, which is based on functions.i.e based on Top down approach
+
+
+// What is class
+A class defines the template or the definition of an object. It is used for creating objects at run time.
+A class refers to a logical entity. E.g., a vehicle may be defined as a class. 
+
+// What is object
+An object refers to the run time instance created from the class during program execution. 
+Objects can refer to real-world entities that have attributes or properties and methods to support the behaviour
+
+
+
+ it is possible to call a base class method if it is defined as a static method without creating the object of the class
+ 
+ 
+// Limitaions of Inheritance
+The inheritance requires more processing time for the programs as it has to navigate various classes during execution. 
+Due to inheritance, the parent and child class are tightly coupled. When any changes are needed in the logic, 
+it may require changes in both parent and child classes. 
+
+
+
+
+// Interface 
+An interface allows a declaration of methods without providing a definition
+
+
+A real-life example of polymorphism, a person at the same time can have different characteristics. 
+Like a man at the same time is a father, a husband, an employee. So the same person posses different behavior in different situations. 
+This is called polymorphism. Polymorphism is considered as one of the important features of Object Oriented Programming.
+
+
+
+// static or compile time polumorphism
+This type of polymorphism is achieved by function overloading or operator overloading.
+
+
+
+// operator overloading 
+// CPP program to illustrate 
+// Operator Overloading 
+#include<iostream> 
+using namespace std; 
+
+class Complex { 
+private: 
+	int real, imag; 
+public: 
+	Complex(int r = 0, int i =0) {real = r; imag = i;} 
+	
+	// This is automatically called when '+' is used with 
+	// between two Complex objects 
+	Complex operator + (Complex const &obj) { 
+		Complex res; 
+		res.real = real + obj.real; 
+		res.imag = imag + obj.imag; 
+		return res; 
+	} 
+	void print() { cout << real << " + i" << imag << endl; } 
+}; 
+
+int main() 
+{ 
+	Complex c1(10, 5), c2(2, 4); 
+	Complex c3 = c1 + c2; // An example call to "operator+" 
+	c3.print(); 
+} 
+
+
+
+
+Method overriding allows the child class to redefine methods of parent class by applying its implementations.
+However, the method name, arguments, and return types remain the same. 
+
+
+Overloading a method means that multiple methods share the same method name but have different arguments.
+However, in the case of the overriding, the child class can redefine the implementation of a method by retaining the same arguments. 
+Another difference is that the overloading is resolved at compile-time while overriding is resolved at run time.
+
+
+
+The data abstraction refers to the ability of object-oriented programming that allows hiding the 
+implementation details of logic yet allows for access to only important information.
+Data abstraction can be accomplished through either an abstract class or an abstract method.
+
+
+An abstract class is made of abstract methods.
+The abstract methods are only declared, however, not implemented.
+When a subclass needs to use the methods, it needs to implement those methods. 
+
+// Virtual Function
+A virtual function is a member function which is declared within a base class and is re-defined(Overriden) by a derived class.
+Virtual functions cannot be static and also cannot be a friend function of another class.
+The prototype of virtual functions should be same in base as well as derived class.
+
+
+
+Sometimes implementation of all function cannot be provided in a base class because we don’t know the implementation. Such a class is called abstract class.
+For example, let Shape be a base class. We cannot provide implementation of function draw() in Shape,
+but we know every derived class must have implementation of draw(). Similarly an Animal class doesn’t have implementation of move()
+(assuming that all animals move), but all animals must know how to move. We cannot create objects of abstract classes.
+
+
+A pure virtual function (or abstract function) in C++ is a virtual function for which we don’t have implementation, we only declare it.
+A pure virtual function is declared by assigning 0 in declaration. 
+
+
+
+A pure virtual function is implemented by classes which are derived from a Abstract class. 
+
+
+#include<iostream> 
+using namespace std; 
+
+class Base 
+{ 
+int x; 
+public: 
+	virtual void fun() = 0; 
+	int getX() { return x; } 
+}; 
+
+// This class inherits from Base and implements fun() 
+class Derived: public Base 
+{ 
+	int y; 
+public: 
+	void fun() { cout << "fun() called"; } 
+}; 
+
+int main(void) 
+{ 
+	Derived d; 
+	d.fun(); 
+	return 0; 
+} 
+// output is fun() called
+// A class is abstract if it has at least one pure virtual function.
+
+If we do not override the pure virtual function in derived class, then derived class also becomes abstract class.
+
+An exception is an event raised during a program execution caused by undesirable input or a condition that prevents further processing.
+An exception causes an interruption in the program’s normal execution and must be handled via exception handling logic to avoid the program’s termination. 
+An error means a problem that the program should not catch while the exception implies a condition that should be caught by the program.
+
+
+A ‘finally’ block is used for executing essential statements such as to free the memory, close files, or database connections, 
+even if an exception occurs. The finally block always runs. 
+
+
+The garbage collection is the ability of the programming language to perform automatic memory management. 
+It automatically frees up the memory by removing the objects that are no longer required.
 
 

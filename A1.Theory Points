@@ -26,6 +26,10 @@ int & b=a
 // inline int max(int a,int b)
 // reduce the calling overhead in the function  so if the function is small then use the inline function else length of binary excetable file increases
 // inline is a request not a command hence may or maynot be accepted 
+// Inline request may be ignored for   while, do while ,recurrsive code, goto statement, static varibale , and if return type is not void but return statement is not present
+// Function overhead is prevented , also prevent the push pop of varible from the call stack
+// But too much inline also reduces the instruction cache memory hit hence program become slower
+// As there are now too much instruction in the code this might cause thrashing in pur program
 
 
 

@@ -63,3 +63,58 @@ void add(int ,int )const
 
 const time noon(12,13,19) is a syntax error
 
+// Virtual Function
+A virtual function is a member function which is declared within a base class and is re-defined(Overriden) by a derived class.
+Virtual functions cannot be static and also cannot be a friend function of another class.
+The prototype of virtual functions should be same in base as well as derived class.
+
+
+
+Sometimes implementation of all function cannot be provided in a base class because we don’t know the implementation. Such a class is called abstract class.
+For example, let Shape be a base class. We cannot provide implementation of function draw() in Shape,
+but we know every derived class must have implementation of draw(). Similarly an Animal class doesn’t have implementation of move()
+(assuming that all animals move), but all animals must know how to move. We cannot create objects of abstract classes.
+
+
+A pure virtual function (or abstract function) in C++ is a virtual function for which we don’t have implementation, we only declare it.
+A pure virtual function is declared by assigning 0 in declaration. 
+
+
+
+A pure virtual function is implemented by classes which are derived from a Abstract class. 
+
+
+#include<iostream> 
+using namespace std; 
+
+class Base 
+{ 
+int x; 
+public: 
+	virtual void fun() = 0; 
+	int getX() { return x; } 
+}; 
+
+// This class inherits from Base and implements fun() 
+class Derived: public Base 
+{ 
+	int y; 
+public: 
+	void fun() { cout << "fun() called"; } 
+}; 
+
+int main(void) 
+{ 
+	Derived d; 
+	d.fun(); 
+	return 0; 
+} 
+// output is fun() called
+// A class is abstract if it has at least one pure virtual function.
+An exception is an event raised during a program execution caused by undesirable input or a condition that prevents further processing.
+An exception causes an interruption in the program’s normal execution and must be handled via exception handling logic to avoid the program’s termination. 
+An error means a problem that the program should not catch while the exception implies a condition that should be caught by the program.
+
+
+A ‘finally’ block is used for executing essential statements such as to free the memory, close files, or database connections, 
+even if an exception occurs. The finally block always runs.

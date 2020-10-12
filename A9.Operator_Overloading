@@ -74,7 +74,9 @@ int main()
 }
 
 
-
+// OBJECTS
+Basic Run time entity 
+Takes space in memory and have associated address i.e we can say varibale of type class
 
 
 

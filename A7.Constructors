@@ -190,7 +190,13 @@ int main()
 
 
 
+Method overriding allows the child class to redefine methods of parent class by applying its implementations.
+However, the method name, arguments, and return types remain the same. 
 
+
+Overloading a method means that multiple methods share the same method name but have different arguments.
+However, in the case of the overriding, the child class can redefine the implementation of a method by retaining the same arguments. 
+Another difference is that the overloading is resolved at compile-time while overriding is resolved at run time.
 
 
 

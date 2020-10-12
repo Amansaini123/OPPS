@@ -140,11 +140,45 @@ int main()
 
 
 
+// What is class
+A class defines the template or the definition of an object. It is used for creating objects at run time.
 
 
 
+/ Limitaions of Inheritance
+The inheritance requires more processing time for the programs as it has to navigate various classes during execution. 
+Due to inheritance, the parent and child class are tightly coupled. When any changes are needed in the logic, 
+it may require changes in both parent and child classes. 
 
 
+
+// Operator Overloading 
+#include<iostream> 
+using namespace std; 
+
+class Complex { 
+private: 
+	int real, imag; 
+public: 
+	Complex(int r = 0, int i =0){
+		real = r; 
+		imag = i;
+	} 
+	Complex operator + (Complex const &obj) { 
+		Complex res; 
+		res.real = real + obj.real; 
+		res.imag = imag + obj.imag; 
+		return res; 
+	} 
+	void print() { cout << real << " + i" << imag << endl; } 
+}; 
+
+int main() 
+{ 
+	Complex c1(10, 5), c2(2, 4); 
+	Complex c3 = c1 + c2; // An example call to "operator+" 
+	c3.print(); 
+} 
 
 
 

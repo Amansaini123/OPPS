@@ -50,3 +50,6 @@ int main()
 }
 
 
+A static function is a member function of a class that can be called even when an object of the class is not initialized. 
+A static function cannot access any variable of its class except for static variables.
+

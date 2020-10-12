@@ -8,3 +8,9 @@ Private data Inherit nahi hota hai public aur protected ho jaata hai child class
 # Virtual Base class ---> Say in hybrid inheritance ek class pe pass parent ki do copies aa jae some how i.e via two paths to the child class say 
 tho virtual base class ye try krta hai ki sirf ek hi copy aaye parent class se naa ki ek se zadda This is also known as virtual inheritance 
 syntax is           lass  Derived_Class : Visibilty_Mode Virtual Parent_Class
+
+
+// BENEFITES OF OPPS
+Through inhertiance we can eliminate the reducdaant code
+System can be easlity upgraded
+Secure progrms as data hiding 

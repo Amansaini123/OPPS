@@ -8,6 +8,10 @@
 //      .*(Pointer to Member cannot be overloaded)
 
 
+An abstract class is made of abstract methods.
+The abstract methods are only declared, however, not implemented.
+When a subclass needs to use the methods, it needs to implement those methods.
+
 
 // When operator is overloaded with multiple jobs it is known as operator overloading
 // It is a way to implement compile time Polymorphosim
@@ -107,3 +111,13 @@ int main()
 	Complex c3 = c1 + c2; // An example call to "operator+" 
 	c3.print(); 
 } 
+
+Sometimes implementation of all function cannot be provided in a base class because we don’t know the implementation. Such a class is called abstract class.
+For example, let Shape be a base class. We cannot provide implementation of function draw() in Shape,
+but we know every derived class must have implementation of draw(). 
+
+// Virtual Function
+A virtual function is a member function which is declared within a base class and is re-defined(Overriden) by a derived class.
+Virtual functions cannot be static and also cannot be a friend function of another class.
+The prototype of virtual functions should be same in base as well as derived class.
+

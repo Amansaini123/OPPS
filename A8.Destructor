@@ -53,3 +53,28 @@ int main()
 A static function is a member function of a class that can be called even when an object of the class is not initialized. 
 A static function cannot access any variable of its class except for static variables.
 
+
+// MESSAGE PASSING -->   Object may communicate with each other through functions
+// ABSTRACTION --->     Act of representing only the essential features without including the backgroud details
+// ENCAPSULATION-->     Wrapping up of the data and functions into a class i.e Data is protected in the capsule and can only be accessed via functions
+// RESULABILITY --->    It is a feature of inheritance that avoid the duplication of the data 
+// DYNAMIC BINDING ---> Linking of procedure call to the code to be executed i.e at run time
+
+
+// STATIC FUNCTION 
+// static function can only acces the static data and we use class class name to call this function as static varibale is common for all object
+By declaring a function member as static, you make it independent of any particular object of the class. A static member function can be called even 
+if no objects of the class exist and the static functions are accessed using only the class name and the scope resolution operator ::.
+
+
+
+
+
+
+// What is class
+A class defines the template or the definition of an object. It is used for creating objects at run time.
+A class refers to a logical entity. E.g., a vehicle may be defined as a class. 
+
+// What is object
+An object refers to the run time instance created from the class during program execution. 
+Objects can refer to real-world entities that have attributes or properties and methods to support the behaviour

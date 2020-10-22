@@ -232,7 +232,7 @@ class Pig extends Animal {
 }
 
 
-
+If we do not override the pure virtual function in derived class, then derived class also becomes abstract class.
 
 
 

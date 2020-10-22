@@ -270,4 +270,11 @@ cout << "After catch (Will be executed) \n";
 return 0; 
 } 
 
+The garbage collection is the ability of the programming language to perform automatic memory management. 
+It automatically frees up the memory by removing the objects that are no longer required.
+In C/C++, programmer is responsible for both creation and destruction of objects. Usually programmer neglects destruction of useless objects.
+Due to this negligence, at certain point, for creation of new objects, 
+sufficient memory may not be available and entire program will terminate abnormally causing OutOfMemoryErrors.
+Main objective of Garbage Collector is to free heap memory by destroying unreachable objects.
 
+But in Java, the programmer need not to care for all those objects which are no longer in use. Garbage collector destroys these objects.

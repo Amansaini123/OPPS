@@ -238,6 +238,36 @@ If we do not override the pure virtual function in derived class, then derived c
 
 
 
+One of the advantages of C++ over C is Exception Handling. Exceptions are run-time anomalies or abnormal conditions that a program encounters during its execution. There are two types of exceptions: a)Synchronous, b)Asynchronous(Ex:which are beyond the program’s control, Disc failure etc). C++ provides following specialized keywords for this purpose.
+try: represents a block of code that can throw an exception.
 
+catch: represents a block of code that is executed when a particular exception is thrown.
+throw: Used to throw an exception. Also used to list the exceptions that a function throws, but doesn’t handle itself.
+
+
+#include <iostream> 
+using namespace std; 
+
+int main() 
+{ 
+int x = -1; 
+
+// Some code 
+cout << "Before try \n"; 
+try { 
+	cout << "Inside try \n"; 
+	if (x < 0) 
+	{ 
+		throw x; 
+		cout << "After throw (Never executed) \n"; 
+	} 
+} 
+catch (int x ) { 
+	cout << "Exception Caught \n"; 
+} 
+
+cout << "After catch (Will be executed) \n"; 
+return 0; 
+} 
 
 

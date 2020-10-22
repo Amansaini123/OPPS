@@ -121,3 +121,37 @@ A virtual function is a member function which is declared within a base class an
 Virtual functions cannot be static and also cannot be a friend function of another class.
 The prototype of virtual functions should be same in base as well as derived class.
 
+
+
+// Protected access modifier is similar to that of private access modifiers
+// i.e accesability is same as that of private (i.e class functions or friend functions and  can also be used by derived class)
+// this derived class thing is the only difference i.e protected is used in inheritance
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class parent{
+    protected:
+        int x;
+};
+
+class child: public parent{
+    public:
+        void set(int y){
+            // i.e we are able to access the parent class members inside the base class
+            x=y;
+        }
+        void display(){
+            cout<<"The protected id is "<<x<<endl;
+        }
+};
+
+
+int main()
+{
+    child obj;
+    obj.set(5);
+    obj.display();
+}
+

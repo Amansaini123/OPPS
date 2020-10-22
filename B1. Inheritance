@@ -278,3 +278,18 @@ sufficient memory may not be available and entire program will terminate abnorma
 Main objective of Garbage Collector is to free heap memory by destroying unreachable objects.
 
 But in Java, the programmer need not to care for all those objects which are no longer in use. Garbage collector destroys these objects.
+
+
+
+Friend Function Like friend class, a friend function can be given special grant to access private and protected members.
+class Node { 
+private: 
+	int key; 
+	Node* next; 
+
+	/* Other members of Node Class */
+	friend int LinkedList::search(); 
+	// Only search() of linkedList 
+	// can access internal members 
+}; 
+

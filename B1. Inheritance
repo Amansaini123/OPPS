@@ -14,3 +14,230 @@ syntax is           lass  Derived_Class : Visibilty_Mode Virtual Parent_Class
 Through inhertiance we can eliminate the reducdaant code
 System can be easlity upgraded
 Secure progrms as data hiding 
+
+
+// Inline function in C++
+// Function inside the class in already inline
+// inline int max(int a,int b)
+// reduce the calling overhead in the function  so if the function is small then use the inline function else length of binary excetable file increases
+// inline is a request not a command hence may or maynot be accepted 
+// Inline request may be ignored for   while, do while ,recurrsive code, goto statement, static varibale , and if return type is not void but return statement is not present
+// Function overhead is prevented , also prevent the push pop of varible from the call stack
+// But too much inline also reduces the instruction cache memory hit hence program become slower
+// As there are now too much instruction in the code this might cause thrashing in pur program
+
+
+// Abstraction --> refers to the coffee making machine
+// We can implement abstraction using classes as they bind data and functions together we can also implement abstraction using header file such as math.h have pow
+
+Encapsulation is defined as binding together the data and the functions that (manipulates them).i.e private variable are only
+accesed via functions present in the class in a company there are different sections like the accounts section
+
+Polymorphism means "many forms", and it occurs when we have many classes that are related to each other by inheritance.
+A real-life example of polymorphism, a person at the same time can have different characteristics.
+
+
+Polymorphism is of two types 
+->compile time polymorphism is Function and operator overloading 
+->Run time poylmorphism is Virtual Functions (A virtual function is a member function which is declared within a base class and is re-defined(Overriden) by a derived class.)
+
+
+
+Virtual functions cannot be static and also cannot be a friend function of another class.
+The prototype of virtual functions should be same in base as well as derived class.
+They are always defined in base class and overridden in derived class.
+It is not mandatory for derived class to override (or re-define the virtual function), in that case base class version of function is used.
+Virtual Function binded at run time and non virtual at compile time
+A pure virtual function is a virtual function in C++ for which we need not to write any function definition and only we have to declare it. 
+It is declared by assigning 0 in the declaration.
+An abstract class is a class in C++ which have at least one pure virtual function.
+Abstract class: is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class).
+Sometimes implementation of all function cannot be provided in a base class because we don’t know the implementation. Such a class is called abstract class.
+For example, let Shape be a base class. We cannot provide implementation of function draw() in Shape, but we know every derived class must have implementation 
+of draw(). A pure virtual function (or abstract function) in C++ is a virtual function for which we don’t have implementation, we only declare it.
+A pure virtual function is declared by assigning 0 in declaration
+
+
+
+#include <iostream> 
+using namespace std; 
+
+class base { 
+public: 
+	virtual void print() 
+	{ 
+		cout << "print base class" << endl; 
+	} 
+
+	void show() 
+	{ 
+		cout << "show base class" << endl; 
+	} 
+}; 
+
+class derived : public base { 
+public: 
+	void print() 
+	{ 
+		cout << "print derived class" << endl; 
+	} 
+
+	void show() 
+	{ 
+		cout << "show derived class" << endl; 
+	} 
+}; 
+
+int main() 
+{ 
+	base* bptr; 
+	derived d; 
+	bptr = &d; 
+
+	// virtual function, binded at runtime 
+	bptr->print(); 
+
+	// Non-virtual function, binded at compile time 
+	bptr->show(); 
+} 
+
+print derived class
+show base class
+
+
+
+
+
+// Pure virtual function
+#include<iostream>
+using namespace std;
+class B {
+   public:
+      virtual void s() = 0; // Pure Virtual Function
+};
+
+class D:public B {
+   public:
+      void s() {
+         cout << "Virtual Function in Derived class\n";
+      }
+};
+
+int main() {
+   B *b;
+   D dobj;
+   b = &dobj;
+   b->s();
+}
+
+
+
+
+When the base class and derived class have member functions with exactly the same name, same return-type, and same arguments list,
+then it is said to be function overriding. Prioirty is given to the child class
+
+
+
+// We can call Class  without instantiating it  i.e without making the object of it if it has a static method or it is inherited by some other class
+Object is a physical entity class is a virtual entity (Object is a varibale of class)
+Multiple inheritance comes into picture when a class inherits more than one base class example class defining a child inherits from two base classes Mother and Father
+
+
+
+
+
+
+// A friend class can access private and protected members of other class in which it is declared as friend. 
+// It is sometimes useful to allow a particular class to access private members of other class.
+
+
+class Node { 
+private: 
+	int key; 
+	Node* next; 
+	/* Other members of Node Class */
+
+	// Now class LinkedList can 
+	// access private members of Node 
+	friend class LinkedList; 
+}; 
+
+
+An abstract class is a class that consists of abstract methods. These methods are basically declared but not defined there i.e these methods are exculisvely defined in subclass 
+If these methods are to be used in some subclass, they need to be exclusively defined in the subclass.
+Instances of an abstract class cannot be created because it does not have a complete implementation. 
+However, instances of subclass inheriting the abstract class can be created.
+Pure virtual functions or abstract functions are functions that are only declared in the base class.
+This means that they do not contain any definition in the base class and need to be redefined in the subclass.
+
+
+
+Following are some important points about friend functions and classes:
+Friendship is only for the limited purpose as it lessens the intensity of encapuslation
+Friendship is not mutual. If class A is a friend of B, then B doesn’t become a friend of A automatically
+Friend ship is not inherited
+the concept of friends is not there in Java.
+
+
+
+// Operator Overloading in C++
+#include<iostream> 
+using namespace std; 
+
+class Complex { 
+private: 
+	int real, imag; 
+public: 
+	Complex(int r = 0, int i =0) {real = r; imag = i;} 
+	
+	// This is automatically called when '+' is used with 
+	// between two Complex objects 
+	Complex operator + (Complex const &obj) { 
+		Complex res; 
+		res.real = real + obj.real; 
+		res.imag = imag + obj.imag; 
+		return res; 
+	} 
+	void print() { cout << real << " + i" << imag << endl; } 
+}; 
+
+int main() 
+{ 
+	Complex c1(10, 5), c2(2, 4); 
+	Complex c3 = c1 + c2; // An example call to "operator+" 
+	c3.print(); 
+} 
+
+
+
+// Limitation of Inheritance 
+// Increases the (time and effort) required to execute a program as it requires jumping back and forth between different classes and 
+// The parent class and the child class get tightly coupled Moreover modifications to the program would require changes both in the parent as well as the child class
+
+abstract class Animal {
+  // Abstract method (does not have a body)
+  public abstract void animalSound();
+  // Regular method
+  public void sleep() {
+    System.out.println("Zzz");
+  }
+}
+
+// Subclass (inherit from Animal)
+class Pig extends Animal {
+  public void animalSound() {
+    // The body of animalSound() is provided here
+    System.out.println("The pig says: wee wee");
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

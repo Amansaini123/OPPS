@@ -293,3 +293,16 @@ private:
 	// can access internal members 
 }; 
 
+
+
+
+// No values are returned by construtor
+// When we call a object, constructor is automatically called and values are begin assigned to object
+// Same name as of the class
+// Special type of functions i.e special type of member function for assigning the values to private data
+// Created in public part
+// No values are returned by constructor not even void i.e void car() is wrong
+// Constructor can not be inherited
+// Constructor are not virtual
+// We cant refer constructor by its address
+
